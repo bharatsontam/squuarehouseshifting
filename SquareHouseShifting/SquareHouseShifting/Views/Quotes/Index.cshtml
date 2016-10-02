@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SquareHouseShifting.Models.QuoteViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Quote List</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StartAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuotePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsPurchased)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuotePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsPurchased)
+        </td>
+    </tr>
+}
+
+</table>

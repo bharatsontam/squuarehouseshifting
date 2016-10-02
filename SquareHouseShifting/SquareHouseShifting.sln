@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareHouseShifting", "SquareHouseShifting\SquareHouseShifting.csproj", "{0C989D59-F90C-4A0E-A473-20036BEF37E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareHouseShifting.Data", "SquareHouseShifting.Data\SquareHouseShifting.Data.csproj", "{2C4C4272-46CA-44EC-BD1D-7134B35B130F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C989D59-F90C-4A0E-A473-20036BEF37E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C989D59-F90C-4A0E-A473-20036BEF37E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C989D59-F90C-4A0E-A473-20036BEF37E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C989D59-F90C-4A0E-A473-20036BEF37E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C4C4272-46CA-44EC-BD1D-7134B35B130F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C4C4272-46CA-44EC-BD1D-7134B35B130F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C4C4272-46CA-44EC-BD1D-7134B35B130F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C4C4272-46CA-44EC-BD1D-7134B35B130F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,76 @@
+﻿@model SquareHouseShifting.Models.QuoteDetailsViewModel
+@{
+    ViewBag.Title = "Quote";
+}
+
+<h2>Quote</h2>
+
+<div class="row">
+
+    @using (Html.BeginForm("DoPurchase", "Purchase", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.Hidden("UserId",Model.UserId)
+        @Html.Hidden("Id",Model.Id)
+        @Html.Hidden("QuotePrice",Model.QuotePrice)
+        <div class="form-group">
+            <label style="font-weight: normal" class="col-md-2 control-label" for="start">Name:</label>
+            <div class="col-md-10">
+                <label class="col-md-7 control-label" for="start">@Model.Name</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="font-weight: normal" class="col-md-2 control-label" for="start">Email:</label>
+            <div class="col-md-10">
+                <label class="col-md-7 control-label" for="start">@Model.Email</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="font-weight: normal" class="col-md-2 control-label" for="start">Address:</label>
+            <div class="col-md-10">
+                <label class="col-md-7 control-label" for="start">@Model.StartAddress</label>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <label style="font-weight: normal" class="col-md-2 control-label" for="start">Start:</label>
+            <div class="col-md-10">
+                <label class="col-md-7 control-label" for="start">@Model.StartAddress</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="font-weight: normal" class="col-md-2 control-label" for="start">End:</label>
+            <div class="col-md-10">
+                <label class="col-md-7 control-label" for="start">@Model.EndAddress</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="font-weight: normal" class="col-md-2 control-label" for="start">Distance:</label>
+            <div class="col-md-10">
+                <label class="col-md-7 control-label" for="start">@Model.Distance (Miles)</label>
+            </div>
+        </div>
+        foreach (var info in Model.QuoteInfoList)
+        {
+            <div class="form-group">
+                <label style="font-weight: normal" class="col-md-2 control-label" for="start">@info.Key :</label>
+                <div class="col-md-10">
+                    <label class="col-md-7 control-label" for="start">$ @info.value</label>
+                </div>
+            </div>
+        }
+        <hr />
+        <div class="form-group">
+            <b><label class="col-md-2 control-label" for="start">QuotePrice:</label></b>
+            <div class="col-md-10">
+                <b><label class="col-md-7 control-label" for="start">$ @Model.QuotePrice</label></b>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-7 col-md-7">
+                <input type="submit" class="btn btn-primary" value="Purchase" />
+            </div>
+        </div>
+
+    }
+</div>

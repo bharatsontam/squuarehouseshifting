@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Calculate Distance";
+}
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRnkB0vy0wtecwLglj1eCIBFMrENrrG48&callback=initialize"
+        type="text/javascript"></script>
+<style type="text/css">
+    #map_canvas {
+        height: 100%;
+    }
+</style>
+
+<div class="panel-body">
+    @using (Html.BeginForm("Quote", "Home", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+    {
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="start">From Address: </label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="start" id="start" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="end">To Address: </label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="end" id="end" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" class="btn btn-info" value="Calculate Distance" onclick="calcRoute()" />
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="col-md-2 control-label" for="distance">Distance (Miles): </label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="distance" id="distance" readonly="true" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-primary" value="Get Quote" />
+            </div>
+        </div>
+    }
+</div>
+<div class="row">
+    <div id="map_canvas" style="height:500px;"></div>
+</div>
+<script type="text/javascript">
+    var directionDisplay;
+    var directionsService;
+    var map;
+
+    function initialize() {
+        directionsService = new google.maps.DirectionsService();
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        var melbourne = new google.maps.LatLng(-37.813187, 144.96298);
+        var myOptions = {
+            zoom: 12,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: melbourne
+        }
+
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        directionsDisplay.setMap(map);
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                map.setCenter(initialLocation);
+            });
+        }
+    }
+
+    function calcRoute() {
+        var start = document.getElementById("start").value;
+        var end = document.getElementById("end").value;
+        var distanceInput = document.getElementById("distance");
+
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.DirectionsTravelMode.WALKING
+        };
+
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                distanceInput.value = Math.round((response.routes[0].legs[0].distance.value / 1000) * 0.621371 * 100, -2) / 100;
+            }
+        });
+    }
+</script>
+<script type="text/javascript">
+    initialize();
+</script>

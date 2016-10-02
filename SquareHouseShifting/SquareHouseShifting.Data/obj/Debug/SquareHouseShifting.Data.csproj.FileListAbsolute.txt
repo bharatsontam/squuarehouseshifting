@@ -1,0 +1,10 @@
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\bin\Debug\SquareHouseShifting.Data.dll.config
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\bin\Debug\SquareHouseShifting.Data.dll
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\bin\Debug\SquareHouseShifting.Data.pdb
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\bin\Debug\EntityFramework.dll
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\bin\Debug\EntityFramework.xml
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\obj\Debug\SquareHouseShifting.Data.dll
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\obj\Debug\SquareHouseShifting.Data.pdb
+D:\MyFiles\MyPractice\SquareHouseShifting\SquareHouseShifting.Data\obj\Debug\SquareHouseShifting.Data.csprojResolveAssemblyReference.cache
